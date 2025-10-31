@@ -498,7 +498,7 @@ class RegisteredLimitsTestCase(test_v3.RestfulTestCase):
             expected_status=http.client.FORBIDDEN,
         )
 
-    def test_update_registered_limit_value_fields_with_referenced_limit(self):
+    def test_update_registered_limit_value_with_referenced_limit(self):
         ref = unit.new_registered_limit_ref(
             service_id=self.service_id,
             region_id=self.region_id,
@@ -543,7 +543,7 @@ class RegisteredLimitsTestCase(test_v3.RestfulTestCase):
         self.assertEqual(self.region_id, updated['region_id'])
         self.assertEqual('volume', updated['resource_name'])
 
-    def test_update_registered_limit_value_fields_fail_with_referenced_limit(self):
+    def test_update_registered_limit_value_fail_with_referenced_limit(self):
         ref = unit.new_registered_limit_ref(
             service_id=self.service_id,
             region_id=self.region_id,
